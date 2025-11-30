@@ -8,6 +8,7 @@ RUN rm -rf /var/www/html/*
 # Download template INSIDE container
 RUN wget https://templatemo.com/download/templatemo_603_nexaverse -O /tmp/prem.zip \
     && unzip /tmp/prem.zip -d /tmp/site \
-    && cp -r /tmp/prem/* /var/www/html/
+    && cp -r /tmp/site/templatemo_603_nexaverse/* /var/www/html/
+
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
